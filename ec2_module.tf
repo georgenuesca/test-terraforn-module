@@ -19,7 +19,7 @@ locals {
 // This is an AWS resource block that creates an EC2 instance
 resource "aws_instance" "example" {
   ami           = data.aws_ami.amazon_linux_latest.id
-  instance_type = "t2.micro"
+  instance_type = "t2.${var.size}"
 
   // Tag the instance with some metadata
   tags          = local.tags
